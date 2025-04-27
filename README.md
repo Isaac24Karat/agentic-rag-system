@@ -7,6 +7,12 @@
 
 ---
 
+## System Diagram
+
+![Agentic RAG System Diagram](agentic-rag-system-diagram.png)
+
+---
+
 ## What It Does
 - Breaks complex questions into smaller sub-questions
 - Routes each sub-question to the best domain expert agent using metadata and glossaries
@@ -26,7 +32,8 @@
 ---
 
 ## Files
-- **agentic-rag-system-workflow.json** — The n8n workflow file for the system
+- **agentic-rag-system-workflow.json** — The exported n8n workflow file
+- **agentic-rag-system-diagram.png** — Visual flow diagram of the system
 
 ---
 
