@@ -1,0 +1,138 @@
+{
+  "name": "Agentic RAG System Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Receive Question (Webhook)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "notes": "Receives the user's complex question via webhook."
+    },
+    {
+      "parameters": {
+        "functionCode": "// Simulate splitting question into sub-questions\nconst question = $json[\"question\"];\nreturn [{ json: { subQuestions: [\n  `What is the process for ${question}?`,\n  `What are the risks related to ${question}?`\n]}}];"
+      },
+      "name": "Split Question into Parts",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        450,
+        300
+      ],
+      "notes": "Breaks down complex user questions into smaller sub-questions."
+    },
+    {
+      "parameters": {
+        "functionCode": "// Simulate routing based on metadata\nconst subQs = $json[\"subQuestions\"];\nreturn subQs.map(q => ({ json: { domain: q.includes('risks') ? 'Risk Expert' : 'Process Expert', subQuestion: q }}));"
+      },
+      "name": "Route to Domain Expert",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        700,
+        300
+      ],
+      "notes": "Routes each sub-question to the appropriate domain expert based on metadata."
+    },
+    {
+      "parameters": {
+        "mode": "chat",
+        "model": "gpt-4",
+        "prompt": "You are a domain expert. Answer the following sub-question clearly and concisely:\n\n{{$json[\"subQuestion\"]}}"
+      },
+      "name": "Domain Expert Agent",
+      "type": "n8n-nodes-base.openai",
+      "typeVersion": 2,
+      "position": [
+        950,
+        300
+      ],
+      "notes": "Domain experts generate answers based on assigned sub-questions."
+    },
+    {
+      "parameters": {
+        "functionCode": "// Simulate Supervisor review and final answer composition\nconst answers = $input.all().map(e => e.json.answer || e.json.subQuestion + ' (simulated answer)').join(' ');\nreturn [{ json: { finalAnswer: `Based on expert analysis: ${answers}` }}];"
+      },
+      "name": "Supervisor Agent",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        300
+      ],
+      "notes": "Supervisor Agent compiles, verifies, and finalizes the structured answer."
+    },
+    {
+      "parameters": {},
+      "name": "Deliver Final Answer (HTTP Response)",
+      "type": "n8n-nodes-base.httpResponse",
+      "typeVersion": 1,
+      "position": [
+        1450,
+        300
+      ],
+      "notes": "Sends the final structured answer back to the user."
+    }
+  ],
+  "connections": {
+    "Receive Question (Webhook)": {
+      "main": [
+        [
+          {
+            "node": "Split Question into Parts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Question into Parts": {
+      "main": [
+        [
+          {
+            "node": "Route to Domain Expert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route to Domain Expert": {
+      "main": [
+        [
+          {
+            "node": "Domain Expert Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Domain Expert Agent": {
+      "main": [
+        [
+          {
+            "node": "Supervisor Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supervisor Agent": {
+      "main": [
+        [
+          {
+            "node": "Deliver Final Answer (HTTP Response)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
