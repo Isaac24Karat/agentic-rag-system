@@ -42,4 +42,14 @@ This project shows how modern AI systems can go beyond simple question answering
 It demonstrates practical AI orchestration skills with real business impact potential.
 
 ---
+
+## Future Work
+
+- Implement a dynamic Supervisor Agent that adapts its aggregation logic based on domain-specific metadata
+- Integrate document freshness scoring to prioritize recent information retrieval
+- Add an automated retraining system to update the domain experts based on new data
+- Deploy a monitoring dashboard to track agent performance, answer latency, and user satisfaction
+
+
+---
 *Demo built for AI Agent Implementation Manager portfolio presentation.*
