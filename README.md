@@ -49,6 +49,7 @@ It demonstrates practical AI orchestration skills with real business impact pote
 - Integrate document freshness scoring to prioritize recent information retrieval
 - Add an automated retraining system to update the domain experts based on new data
 - Deploy a monitoring dashboard to track agent performance, answer latency, and user satisfaction
+- Build an agent evaluation dashboard for performance benchmarking
 
 
 ---
