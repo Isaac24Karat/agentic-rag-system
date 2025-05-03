@@ -1,5 +1,12 @@
 # Agentic RAG System: Multi-Agent Retrieval and Reasoning Workflow with n8n
 
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Built With](https://img.shields.io/badge/built%20with-n8n%20%7C%20LangChain%20%7C%20OpenRouter-blue)
+![AI Agents](https://img.shields.io/badge/AI%20Agents-Supervisor%20%7C%20Retriever%20%7C%20Thinker-purple)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+![Last Update](https://img.shields.io/github/last-commit/Isaac24Karat/agentic-rag-system)
+
+
 > **Project Pitch:**  
 > I built an agentic RAG system that doesn't just retrieve information — it thinks, reasons, and double-checks like a smart research assistant.  
 > It breaks user questions into parts, routes each part to the right domain expert agent, uses business glossaries and metadata, and combines the outputs into high-quality, verified answers.  
