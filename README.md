@@ -14,9 +14,11 @@
 
 ---
 
-## System Diagram
+## 📊 System Diagram
 
-![Agentic RAG System Diagram](agentic-rag-system-diagram.png)
+This workflow uses intelligent agent routing and fallback mechanisms:
+
+![Diagram](./diagram.png)
 
 ---
 
