@@ -23,6 +23,8 @@ This workflow uses intelligent agent routing and fallback mechanisms:
 
 ![Perfect Prompts Workflow Diagram](perfect-prompts-diagram.png)
 
+![Diagram](perfect-prompts-diagram.png)
+
 ---
 
 ## What It Does
