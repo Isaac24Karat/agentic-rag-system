@@ -20,6 +20,8 @@ This workflow uses intelligent agent routing and fallback mechanisms:
 
 ![Diagram](./diagram.png)
 
+![Diagram](./perfect-prompts-diagram.png)
+
 ---
 
 ## What It Does
