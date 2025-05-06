@@ -31,6 +31,13 @@ This workflow uses intelligent agent routing and fallback mechanisms:
 - Synthesizes final answers, checking consistency and completeness
 - Uses a Supervisor Agent to manage the conversation intelligently and autonomously
 
+- ## 🖼️ Visual Comparison: Agentic RAG vs. Single LLM
+
+![Agentic RAG vs Single LLM](./agentic-vs-single-llm.png)
+
+This side-by-side shows how agent-based architecture distributes tasks intelligently, while a single LLM must handle everything in one shot.
+
+
 ---
 
 ## Technologies Used
