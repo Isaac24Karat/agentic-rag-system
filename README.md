@@ -5,6 +5,8 @@
 ![AI Agents](https://img.shields.io/badge/AI%20Agents-Supervisor%20%7C%20Retriever%20%7C%20Thinker-purple)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 ![Last Update](https://img.shields.io/github/last-commit/Isaac24Karat/agentic-rag-system)
+![Workflow Active](https://img.shields.io/badge/Agentic-RAG-blueviolet)
+
 
 
 > **Project Pitch:**  
