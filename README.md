@@ -26,7 +26,7 @@ This workflow uses intelligent agent routing and fallback mechanisms:
 
 ---
 
-## What It Does
+## What It Does  
 - Breaks complex questions into smaller sub-questions
 - Routes each sub-question to the best domain expert agent using metadata and glossaries
 - Pulls from multiple retrieval sources (knowledge bases, vector stores)
